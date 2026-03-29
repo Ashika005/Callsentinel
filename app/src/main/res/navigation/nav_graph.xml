@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Splash / Onboarding -->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.callsentinel.ui.fragments.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_to_onboarding"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.callsentinel.ui.fragments.OnboardingFragment"
+        android:label="Onboarding"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboarding_to_permissions"
+            app:destination="@id/permissionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="com.example.callsentinel.ui.fragments.PermissionsFragment"
+        android:label="Permissions"
+        tools:layout="@layout/fragment_permissions">
+        <action
+            android:id="@+id/action_permissions_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Main Screens -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.callsentinel.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_callDetails"
+            app:destination="@id/callDetailsFragment" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_home_to_analytics"
+            app:destination="@id/analyticsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/callLogFragment"
+        android:name="com.example.callsentinel.ui.fragments.CallLogFragment"
+        android:label="Call Log"
+        tools:layout="@layout/fragment_call_log">
+        <action
+            android:id="@+id/action_callLog_to_callDetails"
+            app:destination="@id/callDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/callDetailsFragment"
+        android:name="com.example.callsentinel.ui.fragments.CallDetailsFragment"
+        android:label="Call Details"
+        tools:layout="@layout/fragment_call_details">
+        <argument
+            android:name="callId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.callsentinel.ui.fragments.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_trustedList"
+            app:destination="@id/trustedListFragment" />
+        <action
+            android:id="@+id/action_settings_to_blockList"
+            app:destination="@id/blockListFragment" />
+        <action
+            android:id="@+id/action_settings_to_riskScoreGuide"
+            app:destination="@id/riskScoreGuideFragment" />
+        <action
+            android:id="@+id/action_settings_to_howItWorks"
+            app:destination="@id/howItWorksFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trustedListFragment"
+        android:name="com.example.callsentinel.ui.fragments.TrustedListFragment"
+        android:label="Trusted Numbers"
+        tools:layout="@layout/fragment_trusted_list" />
+
+    <fragment
+        android:id="@+id/blockListFragment"
+        android:name="com.example.callsentinel.ui.fragments.BlockListFragment"
+        android:label="Blocked Numbers"
+        tools:layout="@layout/fragment_block_list" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="com.example.callsentinel.ui.fragments.AnalyticsFragment"
+        android:label="Analytics"
+        tools:layout="@layout/fragment_analytics" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.callsentinel.ui.fragments.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/reportNumberFragment"
+        android:name="com.example.callsentinel.ui.fragments.ReportNumberFragment"
+        android:label="Report Number"
+        tools:layout="@layout/fragment_report_number">
+        <argument
+            android:name="phoneNumber"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/riskScoreGuideFragment"
+        android:name="com.example.callsentinel.ui.fragments.RiskScoreGuideFragment"
+        android:label="Risk Score Guide"
+        tools:layout="@layout/fragment_risk_score_guide" />
+
+    <fragment
+        android:id="@+id/weeklyReportFragment"
+        android:name="com.example.callsentinel.ui.fragments.WeeklyReportFragment"
+        android:label="Weekly Report"
+        tools:layout="@layout/fragment_weekly_report" />
+
+    <fragment
+        android:id="@+id/howItWorksFragment"
+        android:name="com.example.callsentinel.ui.fragments.HowItWorksFragment"
+        android:label="How It Works"
+        tools:layout="@layout/fragment_how_it_works" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.callsentinel.ui.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/systemContactsFragment"
+        android:name="com.example.callsentinel.ui.fragments.SystemContactsFragment"
+        android:label="System Contacts"
+        tools:layout="@layout/fragment_system_contacts" />
+
+    <fragment
+        android:id="@+id/systemCallLogFragment"
+        android:name="com.example.callsentinel.ui.fragments.SystemCallLogFragment"
+        android:label="System Call Log"
+        tools:layout="@layout/fragment_system_call_log" />
+
+</navigation>

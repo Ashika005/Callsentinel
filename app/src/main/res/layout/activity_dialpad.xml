@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#0A0E17"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACTIVE SCANNER"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.2"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MANUAL THREAT VERIFICATION"
+        android:textColor="#00E5FF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.4"
+        android:layout_marginBottom="48dp" />
+
+    <EditText
+        android:id="@+id/etPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ENTER TARGET NUMBER"
+        android:textColorHint="#8892B0"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:inputType="phone"
+        android:backgroundTint="#192231"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Results Area (Hidden by default) -->
+    <LinearLayout
+        android:id="@+id/llScanResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#131A26"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:id="@+id/tvScanResultTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ANALYSIS COMPLETE"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvScanDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="> No threats detected."
+            android:textColor="#00E676"
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="INITIATE SCAN"
+        android:backgroundTint="#00E5FF"
+        android:textColor="#0A0E17"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="OPEN SECURE LINE (CALL)"
+        android:backgroundTint="#192231"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+</LinearLayout>
