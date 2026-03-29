@@ -1,11 +1,3 @@
-<div align="center">
-
-<img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"/>
-<img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"/>
-<img src="https://img.shields.io/badge/Architecture-MVVM-FF6F00?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Min%20SDK-API%2026-blue?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
-
 # 🛡️ CallSentinel
 
 ### *Your personal call bodyguard — real-time scam & spoof detection for Android*
